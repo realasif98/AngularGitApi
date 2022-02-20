@@ -1,0 +1,27 @@
+<span class="mainProfileSpan">Search History</span>
+<div class="profileHistory">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td col="6"> <input class="searchInput" #data (keyup)="filterList(data.value)" placeholder="Search here..."
+            type="text"> </td>
+        <td col="6"><button class="btn-outline-danger clearBtn" (click)="clearHistory()"> Clear Search</button></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr name="searchList" ngDefaultControl [(ngModel)]="userHistory" *ngFor="let profile of userHistory |
+                  paginate: {id:'historyPagination', itemsPerPage: itemCount, currentPage: pageNumber }; 
+                  let i = index;">
+        <td colspan="2" style="cursor: pointer;"><a class="links" [routerLink]="" (click)="getUserProfile(profile['login'])">
+            <strong>{{(itemCount * (pageNumber-1)) + i+1}}.</strong>
+            {{profile['name']}}</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="repoPage">
+    <pagination-controls id="historyPagination" previousLabel="Prev" nextLabel="Next"
+      (pageChange)="handlePageChange($event)">
+    </pagination-controls>
+  </div>
+</div>

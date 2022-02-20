@@ -1,0 +1,44 @@
+.mainProfileSpan{
+    padding: 1%;
+    font-weight: 600;
+    color: rgb(5, 0, 0);
+}
+
+
+.hist_list {
+  color: black;
+  font-weight: bold;
+  border: 1px solid #8d2f2f;
+}
+
+.repo {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clearBtn {
+  padding: 2% 15%;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.searchInput {
+  padding: 1%;
+  border: 1px solid black;
+  width: 100%;
+  border-color: rgb(10, 10, 15)
+}
+
+
+.searchInput:hover {
+  border-color: rgb(6, 61, 145);
+}
+
+.repoPage {
+  text-align: end;
+}

@@ -1,0 +1,60 @@
+<div>
+  <span class="mainProfileSpan">Main Profile</span>
+  <div class="mainProfile">
+    <div class="imageAndBio">
+      <a href="{{userProfile.profile_url}}">
+        <img id="profileImage" src="{{userProfile.avatar_url}}" alt="">
+      </a>
+      <p class="bio">
+        {{userProfile.bio}}
+      </p>
+    </div>
+    <div class="otherDetails">
+      <p><strong>Name:</strong> {{userProfile.username}}</p>
+      <p><strong>Email:</strong> {{userProfile.email}}</p>
+      <p><strong>Company:</strong> {{userProfile.company}}</p>
+      <p><strong>Location:</strong> {{userProfile.location}}</p>
+      <p><strong>Followers:</strong> {{userProfile.followers}}</p>
+      <p><strong>Followings:</strong> {{userProfile.followings}}</p>
+      <p><strong>Public Repo's:</strong> {{userProfile.reposCount}}</p>
+      <p><strong>Joined:</strong> {{userProfile.joined | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+  <span class="mainProfileSpan">Repositories:</span>
+  <div class="repo">
+    <table class="flexTable table table-hover">
+      <thead>
+        <tr appHighLight>
+          <td><strong>S.No.</strong></td>
+          <td><strong>Name</strong></td>
+          <td><strong>Size</strong></td>
+          <td><strong>Language</strong></td>
+          <td><strong>Issues</strong></td>
+          <td><strong>Created Date</strong></td>
+          <td><strong>Updated Date</strong></td>
+          <td><strong>Link</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr name="repoList" ngDefaultControl [(ngModel)]="userRepos" *ngFor="let repo of userRepos |
+                    paginate: { id:'repoPagination', itemsPerPage: itemCount, currentPage: pageNumber };
+                    let i = index;">
+          <td>
+            <strong>{{(itemCount * (pageNumber-1)) + i + 1}}.</strong>
+          </td>
+          <td> {{repo.reponame}} </td>
+          <td> {{repo.size}} </td>
+          <td> {{repo.language}} </td>
+          <td> {{repo.issues}} </td>
+          <td> {{repo.created | date:'MM/dd/yyyy'}} </td>
+          <td> {{repo.updated | date:'MM/dd/yyyy'}} </td>
+          <td> <strong><a class="links" href="{{repo.link}}" target="blank">Go</a></strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="repoPage">
+      <pagination-controls id="repoPagination" previousLabel="Prev" nextLabel="Next"
+        (pageChange)="handlePageChange($event)">
+      </pagination-controls>
+    </div>
+  </div>

@@ -1,0 +1,9 @@
+<div class="borderdiv">
+    <div class="input-group mb-3">
+      <input #userName name="username" type="text" class="form-control"  (keyup.enter)="getUserDetails(userName.value)"  
+      placeholder="Search git username here..." aria-label="username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-info btnSearch" type="button" (click)="getUserDetails(userName.value)" >
+          Search User
+      </button>
+    </div> 
+</div>

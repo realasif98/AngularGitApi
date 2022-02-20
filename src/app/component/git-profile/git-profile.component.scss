@@ -1,0 +1,64 @@
+.mainProfileSpan{
+    padding: 1%;
+    font-weight: 600;
+    color: rgb(5, 0, 0);
+  }
+  
+  .gitProfile{
+    margin-right: 2%;
+    width: 58%;
+    max-width: 700px;
+  }
+  
+  .mainProfile { 
+    padding: 1%;
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  .imageAndBio{
+    max-width: 250px;
+    border: 2px solid black;
+  }
+  
+  #profileImage{
+    align-content: center; 
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  p{
+    font-weight: 500;
+    padding: 6px 10px;
+    margin: 0;
+  }
+  
+  .repo{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .flexTable{
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .links{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .repoPage{
+    text-align: end;
+  }
+  
+  
